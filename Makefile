@@ -22,7 +22,7 @@ build: ## builds/downloadds nifi docker image
 	docker-compose build
 
 test: ##  run tests
-	tests/test_url.sh http://127.0.0.1:8080/nifi/
+	tests/test_url.sh http://127.0.0.1:8082/nifi/
 
 stop: ##  stops nifi server
 	docker-compose down

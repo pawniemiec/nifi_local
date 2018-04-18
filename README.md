@@ -5,6 +5,7 @@ This project is dependent on the following libs and programs:
 - docker
 - docker-compose
 - make
+- curl
 
 ## License
 All code is licensed under MIT license.
