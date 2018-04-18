@@ -24,7 +24,7 @@ build: ## builds/downloadds nifi docker image
 test: ##  run tests
 	tests/test_url.sh http://127.0.0.1:8080/nifi/
 
-stop: ##  stops mysql and clears data
+stop: ##  stops nifi server
 	docker-compose down
 
 bash: ##  login to container

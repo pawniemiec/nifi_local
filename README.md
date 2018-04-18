@@ -1,4 +1,4 @@
-# Nifi tutorial
+# Nifi local server
 
 ## Prerequisites
 This project is dependent on the following libs and programs:
@@ -9,7 +9,7 @@ This project is dependent on the following libs and programs:
 ## License
 All code is licensed under MIT license.
 
-## Make file
+## Makefile
 - help:  shows all available targets
 - start: starts nifi server
 - build: builds/downloadds nifi docker image
