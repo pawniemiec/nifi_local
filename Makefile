@@ -25,7 +25,10 @@ test: ##  run tests
 	tests/test_url.sh http://127.0.0.1:8082/nifi/
 
 stop: ##  stops nifi server
+	docker-compose stop
+
+clear: ## stops nifi server and removes all projects
 	docker-compose down
 
 bash: ##  login to container
-	docker exec -it `docker-compose ps -q` /usr/bin/env bash
+	docker exec -u 0 -it `docker-compose ps -q` /usr/bin/env bash
