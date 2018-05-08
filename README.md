@@ -1,4 +1,4 @@
-# Nifi local server
+# NiFi local server
 
 ## Prerequisites
 This project is dependent on the following libs and programs:
@@ -12,8 +12,8 @@ All code is licensed under MIT license.
 
 ## Makefile
 - help:  shows all available targets
-- start: starts nifi server
-- build: builds/downloadds nifi docker image
+- start: starts NiFi server
+- build: builds/downloadds NiFi docker image
 - test:  run tests
-- stop:  stops mysql and clears data
+- stop:  stops NiFi and clears data
 - bash:  login to container
