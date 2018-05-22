@@ -32,6 +32,7 @@ start: ##  start container
 	@echo Starting container ${DOCKER_NAME}_${DOCKER_VER}
 	@docker run -d -i \
 		-p 8080:8080 \
+		-v ${CURRENT_DIR}/data:/data \
 		--name ${DOCKER_NAME}_${DOCKER_VER} \
 		-t ${DOCKER_NAME}:${DOCKER_VER}
 
