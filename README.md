@@ -23,3 +23,10 @@ Docker mounts ./data directory as /data inside container, hnce if yo want to res
 
 There is no automatic "load" of configuration. Please refer to Apache NiFi documentation and update Docker Compose accordingly:
 https://nifi.apache.org/docs.html
+
+Nifi will run on port 8082 by default (which is a mapping form container internal 8080).
+
+If you want to configure custom port set:
+```bash
+export NIFI_WEB_HTTP_PORT=<port of your choice>
+```

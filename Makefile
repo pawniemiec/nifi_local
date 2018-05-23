@@ -6,6 +6,11 @@ DCR_HOST=localhost
 DCR_PORT=5000
 ENV_FILE=$(PWD)/.env
 
+# Configure Nifi port if not set
+ifndef NIFI_WEB_HTTP_PORT
+	NIFI_WEB_HTTP_PORT=8082
+endif
+
 # Get Container ID if it's running
 CONTAINER_ID := $(shell bash -c 'docker ps -a -q -f name=${DOCKER_NAME}_${DOCKER_VER}')
 
@@ -33,6 +38,7 @@ start: ##  start container
 	@docker run -d -i \
 		-p 8080:8080 \
 		-v ${CURRENT_DIR}/data:/data \
+		-v ${CURRENT_DIR}/conf:/opt/nifi/nifi-1.6.0/conf \
 		--name ${DOCKER_NAME}_${DOCKER_VER} \
 		-t ${DOCKER_NAME}:${DOCKER_VER}
 
@@ -40,7 +46,7 @@ logs: ##   show container logs (Ctrl-C to stop)
 	@docker logs ${CONTAINER_ID} -f
 
 test: ##   run tests
-	tests/test_url.sh http://127.0.0.1:8087/nifi/
+	tests/test_url.sh http://127.0.0.1:${NIFI_WEB_HTTP_PORT}/nifi/
 
 stop: ##   stops and removes container
 	@echo Stopping container ${CONTAINER_ID}
