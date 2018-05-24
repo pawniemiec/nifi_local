@@ -36,7 +36,7 @@ build: ##  builds container image
 start: ##  start container
 	@echo Starting container ${DOCKER_NAME}_${DOCKER_VER}
 	@docker run -d -i \
-		-p 8080:8080 \
+		-p ${NIFI_WEB_HTTP_PORT}:8080 \
 		-v ${CURRENT_DIR}/data:/data \
 		-v ${CURRENT_DIR}/conf:/opt/nifi/nifi-1.6.0/conf \
 		--name ${DOCKER_NAME}_${DOCKER_VER} \
